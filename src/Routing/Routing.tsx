@@ -6,9 +6,12 @@ export default class Routing extends PureComponent {
 
     render() {
         return (
-            <Routes>
-                <Route path="/" element={<App />} />
-            </Routes>
+            <div className="App">
+                <h1>Welcome to React Router!</h1>
+                <Routes>
+                    <Route path="/" element={<App />} />
+                </Routes>
+            </div>
         )
     }
 }
