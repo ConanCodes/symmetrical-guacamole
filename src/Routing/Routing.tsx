@@ -8,7 +8,6 @@ import Alert from "../Components/Alert";
 export default class Routing extends PureComponent {
 
     render() {
-       
         return (
             <div className="App">
                 <h1>This is going to take awhile...</h1>
