@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../../Expenses App/src/UI/Card.js", "../../Expenses App/src/NewExpense", "../../Expenses App/src/Expenses"  ]
 }
