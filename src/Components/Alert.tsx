@@ -1,4 +1,4 @@
-import Navbar from "../Components/Navbar";
+import Navbar from './Navbar';
 
 function App() {
 
@@ -9,19 +9,19 @@ function App() {
   function sayHi() {
     alert('I\'m trying to figure out how to incorporate a calculator in this app and I am struggling');
   }
-  
+
   return (
     <><Navbar />
-    <div>
-          <h2></h2>
-          <button onClick={sayHello}>
-              Don't Click me!
-          </button>
-          <button onClick={sayHi}>
-               Click me!
-          </button>
+      <div>
+        <h2></h2>
+        <button onClick={sayHello}>
+          Don't Click me!
+        </button>
+        <button onClick={sayHi}>
+          Click me!
+        </button>
       </div>
-      </>
+    </>
   );
 }
 

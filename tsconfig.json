@@ -21,6 +21,12 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "../../Expenses App/src/UI/Card.js", "../../Expenses App/src/NewExpense", "../../Expenses App/src/Expenses"  ]
+    "src",
+    "__tests__/App.test.tsx",
+    "babel.config.js",
+  ],
+  "outDir": "./dist/",
+  "noImplicitAny": true,
+  "module": "es6",
+  "sourceMap": true,
 }
