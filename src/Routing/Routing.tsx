@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import App from '../Components/App';
-import BasicTable from "../Components/BasicTable";
-import Guacc from "../Components/Guacc";
-import Alert from "../Components/Alert";
+import { PureComponent } from "react";
+import { Routes, Route } from "react-router-dom";
+import App from '../components/App';
+import BasicTable from "../components/BasicTable";
+import Guacc from "../components/Guacc";
+import Alert from "../components/Alert";
 
 export default class Routing extends PureComponent {
 

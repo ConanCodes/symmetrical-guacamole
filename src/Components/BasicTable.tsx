@@ -8,31 +8,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 
-/**Advice/Todo
- * Nothing jumps out to me right away here except our class name doesnt match our file name
- * Your table isnt populating, if we check the console it shows "Each child in a list should have a unique "key" prop."
- * Using that as a que to where to look take a look through this component and see where the issue is
- * 
- * hint: You changed the name of the create data rows from the basicTable component
- *        Dont be afraid to place a console log inside the render to see what rows returns
- */
 
-export default class Guac extends PureComponent {
+export default class BasicTable extends PureComponent {
 
-
-  constructor(props) {
-    super(props)
-
-
+  createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
+    return { name, calories, fat, carbs, protein };
   }
-
-
-  createData(one, two, three, four, five,) {
-    return { one, two, three, four, five, };
-  }
-
-
-
 
   render() {
 
@@ -50,11 +31,11 @@ export default class Guac extends PureComponent {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Numbers</TableCell>
-                <TableCell align="right">one</TableCell>
-                <TableCell align="right">two&nbsp;</TableCell>
-                <TableCell align="right">three&nbsp;</TableCell>
-                <TableCell align="right">four&nbsp;</TableCell>
+                <TableCell>Dessert (100g serving)</TableCell>
+                <TableCell align="right">Calories</TableCell>
+                <TableCell align="right">Fat&nbsp;(g)</TableCell>
+                <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+                <TableCell align="right">Protein&nbsp;(g)</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -76,12 +57,8 @@ export default class Guac extends PureComponent {
           </Table>
         </TableContainer>
         <Link to="/">Home</Link>
-        <Link to="/basictable">Basic Table</Link>
-        <Link to="/alert">Alert</Link>
-
-
+        <Link to="/guacc">Guacc</Link>
       </>
-
     );
   }
 }
