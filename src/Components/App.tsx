@@ -2,7 +2,7 @@ import './App.css';
 
 import { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 
 // I dont know why but this import is causing issues, Ill look into it later i guess
 // import logo from '../assets/logo.svg';

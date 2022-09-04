@@ -3,28 +3,32 @@ import { createRoot } from 'react-dom/client';
 import { act } from "react-dom/test-utils";
 import App from '../src/components/App';
 import { MemoryRouter as Router } from 'react-router-dom'
+import BasicTable from '../src/components/BasicTable';
+const pretty = require('pretty');
 
-let container: HTMLElement = document.createElement("div");
-let root = createRoot(container);
+let container: HTMLElement | null;
+let root: any;
 
 beforeEach(() => {
   // setup a DOM element as a render target
-  container =
-    document.body.appendChild(container);
+  container = document.createElement("div");
+  root = createRoot(container);
+  container = document.body.appendChild(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
   root.unmount();
-  container.remove();
-  // container = root;
-
+  container?.remove();
+  container = null;
 });
 
-it("renders with or without a name", () => {
-  act(() => {
-    root.render(<Router><App /></Router>);
-  });
-  expect(container.textContent).toBe("Hey, stranger");
+test("App", () => {
+  act(() => { root.render(<Router><App /></Router>); });
+  expect(container?.textContent).toBe("HomeAlertGoto Basic TableGuacc");
+});
 
+test("basicTable", () => {
+  act(() => { root.render(<Router><BasicTable /></Router>); });
+  expect(pretty(container?.innerHTML)).toMatchSnapshot()
 });

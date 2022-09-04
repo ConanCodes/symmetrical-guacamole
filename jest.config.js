@@ -1,8 +1,10 @@
 module.exports = {
     roots: ["<rootDir>/__tests__"],
     preset: 'ts-jest',
+    verbose: true,
     testEnvironment: 'jsdom',
     transform: {
+        '^.+\\.tsx?$': 'babel-jest',
         "\\.[jt]sx?$": "babel-jest",
         "^.+\\.tsx?$": "ts-jest",
         "^.+\\.(js|ts)$": "ts-jest",
