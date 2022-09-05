@@ -1,8 +1,6 @@
 import './App.css';
-
 import { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from "../Components/Navbar";
+import Navbar from "./Navbar";
 
 // I dont know why but this import is causing issues, Ill look into it later i guess
 // import logo from '../assets/logo.svg';
@@ -19,6 +17,11 @@ import Navbar from "../Components/Navbar";
  * Putting it in the div will allow you to remove the empty tags <> which will be less for the the dom to render, so better performance in the long run
  */
 
+
+/**
+ * If our NavBar is above our app (not in the div) then we dont have to declare it in each module
+ */
+
 export default class App extends PureComponent {
 
   render() {
@@ -27,8 +30,6 @@ export default class App extends PureComponent {
         <div className="App">
           <header className="App-header">
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <Link to='/basictable'>Goto Basic Table</Link>
-            <Link to='/guacc'>Guacc</Link>
           </header>
         </div>
       </>

@@ -57,7 +57,6 @@ export default class BasicTable extends PureComponent {
           </Table>
         </TableContainer>
         <Link to="/">Home</Link>
-        <Link to="/guacc">Guacc</Link>
       </>
     );
   }

@@ -1,20 +1,18 @@
 /** Advice/Todos
- * className ties a html block to css for styling, if you dont have styling you dont need it. (App.css)
- * The <ul> and <li> tags are for lists, uselly bulleted, they do nothing here.
- * A return block with multiple hmtl/jsx divs should really be in a (...).
- * I dont want to see functions look like this any more man, what a mess!!
+ * Once again wrap the block in parens 
+ * Why are we doing <a> tags when we have a routing function?
+ * If we use links this turns single page app into multiple!
+ * 
  */
 
 export default function Navbar() {
-    return <nav className="nav">
-        <a href="/" className="/">Home</a>
-        <ul>
-            <li>
-                <a href="/alert">Alert</a>
-            </li>
-        </ul>
-
-
-
-    </nav>
+    return (
+        <nav className="nav">
+            <a href="/" className="/">Home</a>
+            <a href="/ButtonPage">ButtonPage</a>
+            <a href="/BasicTable">BasicTable</a>
+            <a href="/guacc">Guacc</a>
+            <a href="/howtobowl">HowToBowl</a>
+        </nav>
+    )
 }

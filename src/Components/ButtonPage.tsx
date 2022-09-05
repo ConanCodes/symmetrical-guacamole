@@ -1,6 +1,6 @@
-import Navbar from './Navbar';
+import Navbar from "./Navbar";
 
-function App() {
+function ButtonPage() {
 
   function sayHello() {
     alert('Pretty sure I said don\'t click me');
@@ -10,9 +10,18 @@ function App() {
     alert('I\'m trying to figure out how to incorporate a calculator in this app and I am struggling');
   }
 
+
   return (
-    <><Navbar />
+    <>
+      <Navbar />
       <div>
+        <h2>Just a couple of buttons</h2>
+        <button onClick={sayHello}>
+          Don't Click me!
+        </button>
+        <button onClick={sayHi}>
+          Click me!
+        </button>
         <h2></h2>
         <button onClick={sayHello}>
           Don't Click me!
@@ -26,4 +35,7 @@ function App() {
 }
 
 
-export default App;
+
+
+
+export default ButtonPage;
