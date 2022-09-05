@@ -22,8 +22,6 @@
   },
   "include": [
     "src",
-    "__tests__/App.test.tsx",
-    "babel.config.js",
     "src/assets/images/gif.d.ts",
     "src/assets/images/jpg.d.ts",
   ],

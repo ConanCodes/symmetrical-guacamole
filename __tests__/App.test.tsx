@@ -4,6 +4,7 @@ import { act } from "react-dom/test-utils";
 import App from '../src/components/App';
 import { MemoryRouter as Router } from 'react-router-dom'
 import BasicTable from '../src/components/BasicTable';
+import React from 'react';
 const pretty = require('pretty');
 
 let container: HTMLElement | null;
@@ -25,7 +26,7 @@ afterEach(() => {
 
 test("App", () => {
   act(() => { root.render(<Router><App /></Router>); });
-  expect(container?.textContent).toBe("HomeAlertGoto Basic TableGuacc");
+  expect(pretty(container?.innerHTML)).toMatchSnapshot()
 });
 
 test("basicTable", () => {

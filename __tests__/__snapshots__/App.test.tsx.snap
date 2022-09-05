@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App 1`] = `
+"<nav class=\\"nav\\"><a href=\\"/\\" class=\\"/\\">Home</a><a href=\\"/ButtonPage\\">ButtonPage</a><a href=\\"/BasicTable\\">BasicTable</a><a href=\\"/guacc\\">Guacc</a><a href=\\"/howtobowl\\">HowToBowl</a></nav>
+<div class=\\"App\\">
+  <header class=\\"App-header\\"></header>
+</div>"
+`;
+
 exports[`basicTable 1`] = `
 "<div class=\\"MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-11xur9t-MuiPaper-root-MuiTableContainer-root\\">
   <table class=\\"MuiTable-root css-quj9j6-MuiTable-root\\" aria-label=\\"simple table\\">
@@ -50,5 +57,5 @@ exports[`basicTable 1`] = `
       </tr>
     </tbody>
   </table>
-</div><a href=\\"/\\">Home</a><a href=\\"/guacc\\">Guacc</a>"
+</div><a href=\\"/\\">Home</a>"
 `;
