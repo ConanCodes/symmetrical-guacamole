@@ -1,61 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App 1`] = `
+exports[`App Test Ensure App Renders 1`] = `
 "<nav class=\\"nav\\"><a href=\\"/\\" class=\\"/\\">Home</a><a href=\\"/ButtonPage\\">ButtonPage</a><a href=\\"/BasicTable\\">BasicTable</a><a href=\\"/guacc\\">Guacc</a><a href=\\"/howtobowl\\">HowToBowl</a></nav>
 <div class=\\"App\\">
   <header class=\\"App-header\\"></header>
 </div>"
-`;
-
-exports[`basicTable 1`] = `
-"<div class=\\"MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-11xur9t-MuiPaper-root-MuiTableContainer-root\\">
-  <table class=\\"MuiTable-root css-quj9j6-MuiTable-root\\" aria-label=\\"simple table\\">
-    <thead class=\\"MuiTableHead-root css-15wwp11-MuiTableHead-root\\">
-      <tr class=\\"MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root\\">
-        <th class=\\"MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root\\" scope=\\"col\\">Dessert (100g serving)</th>
-        <th class=\\"MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1azl6jz-MuiTableCell-root\\" scope=\\"col\\">Calories</th>
-        <th class=\\"MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1azl6jz-MuiTableCell-root\\" scope=\\"col\\">Fat&nbsp;(g)</th>
-        <th class=\\"MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1azl6jz-MuiTableCell-root\\" scope=\\"col\\">Carbs&nbsp;(g)</th>
-        <th class=\\"MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1azl6jz-MuiTableCell-root\\" scope=\\"col\\">Protein&nbsp;(g)</th>
-      </tr>
-    </thead>
-    <tbody class=\\"MuiTableBody-root css-apqrd9-MuiTableBody-root\\">
-      <tr class=\\"MuiTableRow-root css-34nofg-MuiTableRow-root\\">
-        <th class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1ex1afd-MuiTableCell-root\\" scope=\\"row\\">Frozen yoghurt</th>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">159</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">6</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">24</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">4</td>
-      </tr>
-      <tr class=\\"MuiTableRow-root css-34nofg-MuiTableRow-root\\">
-        <th class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1ex1afd-MuiTableCell-root\\" scope=\\"row\\">Ice cream sandwich</th>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">237</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">9</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">37</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">4.3</td>
-      </tr>
-      <tr class=\\"MuiTableRow-root css-34nofg-MuiTableRow-root\\">
-        <th class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1ex1afd-MuiTableCell-root\\" scope=\\"row\\">Eclair</th>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">262</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">16</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">24</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">6</td>
-      </tr>
-      <tr class=\\"MuiTableRow-root css-34nofg-MuiTableRow-root\\">
-        <th class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1ex1afd-MuiTableCell-root\\" scope=\\"row\\">Cupcake</th>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">305</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">3.7</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">67</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">4.3</td>
-      </tr>
-      <tr class=\\"MuiTableRow-root css-34nofg-MuiTableRow-root\\">
-        <th class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1ex1afd-MuiTableCell-root\\" scope=\\"row\\">Gingerbread</th>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">356</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">16</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">49</td>
-        <td class=\\"MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-177gid-MuiTableCell-root\\">3.9</td>
-      </tr>
-    </tbody>
-  </table>
-</div><a href=\\"/\\">Home</a>"
 `;

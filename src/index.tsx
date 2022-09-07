@@ -1,9 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
+import './index.tsx';
 import Routing from './routing/Routing';
 import { BrowserRouter } from "react-router-dom";
-import "./index.css"
 
 // @ts-ignore
 const container: HTMLElement = document.getElementById("root");

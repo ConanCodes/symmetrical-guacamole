@@ -22,8 +22,7 @@
   },
   "include": [
     "src",
-    "src/assets/images/gif.d.ts",
-    "src/assets/images/jpg.d.ts",
+    "custom.d.ts",
   ],
   "outDir": "./dist/",
   "noImplicitAny": true,

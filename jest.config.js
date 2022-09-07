@@ -2,6 +2,9 @@ module.exports = {
     roots: ["<rootDir>/__tests__"],
     preset: 'ts-jest',
     verbose: true,
+    globals: {
+        IS_REACT_ACT_ENVIRONMENT: true,
+    },
     testEnvironment: 'jsdom',
     transform: {
         '^.+\\.tsx?$': 'babel-jest',
@@ -11,15 +14,11 @@ module.exports = {
         "\\.js$": "<rootDir>/node_modules/babel-jest",
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/fileTransformer.js',
     },
-    // testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(test).ts?(x)"],
-    setupFilesAfterEnv: [
-        // "@testing-library/react/cleanup-after-each",
-        // "@testing-library/jest-dom/extend-expect",
+    testMatch: [
+        "**/?(*.)+(test).ts?(x)",
+        "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$"
     ],
-    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-    moduleNameMapper: {
-        "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+    moduleNameMapper: { "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js" }
 };
 
