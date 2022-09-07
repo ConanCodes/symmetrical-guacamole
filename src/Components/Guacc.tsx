@@ -7,6 +7,11 @@ class Guacc extends PureComponent {
 
   render() {
 
+    /**
+     * Again we dont need the Navbar here since its in the parent <App/>
+     * We can remove the empty brackets <> since everything will be in a <div/>
+     */
+
     return (
       <><Navbar />
         <div>

@@ -10,6 +10,10 @@ function ButtonPage() {
     alert('I\'m trying to figure out how to incorporate a calculator in this app and I am struggling');
   }
 
+  /**
+   *  Again we dont need the Navbar here since its in the parent <App/>
+   *  We can remove the empty brackets <> since everything will be in a <div/>
+   */
 
   return (
     <>

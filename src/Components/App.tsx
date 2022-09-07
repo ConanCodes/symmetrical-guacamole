@@ -2,9 +2,6 @@ import './App.css';
 import { PureComponent } from 'react';
 import Navbar from "./Navbar";
 
-// I dont know why but this import is causing issues, Ill look into it later i guess
-// import logo from '../assets/logo.svg';
-
 /** Advice/Todo
  * Rule of thumb everything should be placed withing your App div
  * 
@@ -19,7 +16,7 @@ import Navbar from "./Navbar";
 
 
 /**
- * If our NavBar is above our app (not in the div) then we dont have to declare it in each module
+ * Since our NavBar is in our app component we dont have to declare it in each child
  */
 
 export default class App extends PureComponent {
@@ -29,7 +26,6 @@ export default class App extends PureComponent {
       <><Navbar />
         <div className="App">
           <header className="App-header">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
           </header>
         </div>
       </>

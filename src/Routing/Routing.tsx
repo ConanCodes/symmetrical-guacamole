@@ -13,6 +13,7 @@ export default class Routing extends PureComponent {
             <div className="App">
                 <h1>This is going to take awhile...</h1>
                 <Routes>
+                    {/* Figure out a standard with capalization of your paths, normally its camelCase */}
                     <Route path="/howtobowl" element={<HowToBowl />} />
                     <Route path="/Guacc" element={<Guacc />} />
                     <Route path="/ButtonPage" element={<ButtonPage />} />

@@ -1,7 +1,7 @@
 /** Advice/Todos
  * Once again wrap the block in parens 
  * Why are we doing <a> tags when we have a routing function?
- * If we use links this turns single page app into multiple!
+ * If we use links this turns a single page app into multiple!
  * 
  */
 
