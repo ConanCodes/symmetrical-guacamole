@@ -12,16 +12,20 @@ let root: any;
 
 describe('Basic Table Test', () => {
   beforeEach(() => {
-    // setup a DOM element as a render target
-    container = document.createElement("div");
-    root = createRoot(container);
+    act(() => {
+      // setup a DOM element as a render target
+      container = document.createElement("div");
+      root = createRoot(container);
+    })
   });
 
   afterEach(() => {
-    // cleanup on exiting
-    root.unmount();
-    container?.remove();
-    container = null;
+    act(() => {
+      // cleanup on exiting
+      root.unmount();
+      container?.remove();
+      container = null;
+    })
   });
 
   test("Ensure Table Renders", () => {

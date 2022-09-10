@@ -11,17 +11,20 @@ let root: any;
 
 describe('App Test', () => {
   beforeEach(() => {
-    // setup a DOM element as a render target
-    container = document.createElement("div");
-    root = createRoot(container);
-    container = document.body.appendChild(container);
+    act(() => {
+      // setup a DOM element as a render target
+      container = document.createElement("div");
+      root = createRoot(container);
+    })
   });
 
   afterEach(() => {
-    // cleanup on exiting
-    root.unmount();
-    container?.remove();
-    container = null;
+    act(() => {
+      // cleanup on exiting
+      root.unmount();
+      container?.remove();
+      container = null;
+    })
   });
 
   test("Ensure App Renders", () => {
