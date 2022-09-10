@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import { PureComponent } from 'react';
 import Bowl from '../assets/images/HowToBowl.png'
 import YoureWelcome from '../assets/images/yourewelcome.gif';
@@ -23,7 +22,6 @@ class HowToBowl extends PureComponent {
   render() {
 
     return (
-      <><Navbar />
         <div>
           <h2>This one's for you Josh</h2>
           <img src={Bowl} alt="" />
@@ -31,10 +29,7 @@ class HowToBowl extends PureComponent {
           <button onClick={sayHello}>
             <img className="Steve" src={YoureWelcome} alt="" />
           </button>
-
         </div>
-      </>
-
     );
   }
 }
