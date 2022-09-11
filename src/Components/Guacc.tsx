@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import './App.css';
-import GuaccPic from '../assets/images/guacc.jpg';
+import GuaccPic from '../Assets/images/guacc.jpg';
 
 class Guacc extends PureComponent {
 

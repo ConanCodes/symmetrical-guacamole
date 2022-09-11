@@ -12,7 +12,7 @@ export default function Navbar() {
             <a href="/ButtonPage">ButtonPage</a>
             <a href="/BasicTable">BasicTable</a>
             <a href="/guacc">Guacc</a>
-            <a href="/howtobowl">HowToBowl</a>
+            <a href="/monsterfighter">MonsterFighter</a>
         </nav>
     )
 }

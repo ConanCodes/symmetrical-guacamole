@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.tsx';
-import Routing from './routing/Routing';
+import Routing from './Routing/Routing';
 import { BrowserRouter } from "react-router-dom";
 
 // @ts-ignore
