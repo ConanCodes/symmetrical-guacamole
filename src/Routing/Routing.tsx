@@ -1,10 +1,11 @@
 import { PureComponent } from "react";
-import { Routes, Route } from "react-router-dom";
-import App from '../Components/App';
-import MonsterFighter from "../Components/MonsterFighter";
-import Guacc from "../Components/Guacc";
-import ButtonPage from "../Components/ButtonPage";
-import BasicTable from "../Components/BasicTable";
+import { Provider } from 'react-redux';
+import { Route, Routes } from "react-router-dom";
+import App from '../components/App';
+import BasicTable from "../components/BasicTable";
+import ButtonPage from "../components/ButtonPage";
+import Guacc from "../components/Guacc";
+import MonsterFighter from "../components/MonsterFighter";
 
 export default class Routing extends PureComponent {
 
@@ -21,6 +22,7 @@ export default class Routing extends PureComponent {
                     <Route path="/BasicTable" element={<BasicTable />} />
                     <Route path="/" element={<App />} />
                 </Routes>
+
             </div>
         )
     }

@@ -1,5 +1,11 @@
+import { Grid } from '@mui/material';
 import { PureComponent } from 'react';
+import { connect } from "react-redux";
+import { getStore } from "../store/selectors";
 import './App.css';
+import Inventory from './Inventory';
+
+const _ = require('lodash');
 
 type MonsterFighterState = {
   bonusLifeEl: number;
@@ -13,9 +19,20 @@ type MonsterFighterState = {
   hasBonusLife: boolean;
   log: string[];
   showLog: boolean;
+  itemsEquipped: string[];
 }
 
-class MonsterFighter extends PureComponent<MonsterFighter> {
+type RootState = { rootState: any; }
+
+let inventory: RootState;
+
+const mapStateToProps = (state: any) => {
+  inventory = getStore(state);
+  console.log('inventory', inventory)
+  return { inventory };
+}
+
+class MonsterFighter extends PureComponent<MonsterFighterState> {
 
   state: MonsterFighterState = {
 
@@ -30,7 +47,7 @@ class MonsterFighter extends PureComponent<MonsterFighter> {
     hasBonusLife: false,
     log: [],
     showLog: true,
-
+    itemsEquipped: [],
   }
 
   reset() {
@@ -78,7 +95,6 @@ class MonsterFighter extends PureComponent<MonsterFighter> {
       this.endRound(Math.floor(Math.random() * this.state.STRONG_ATTACK_VALUE), 'attack');
   }
 
-
   healPlayerHandler() {
     let healValue;
     if (this.state.currentPlayerHealth >= this.state.chosenMaxLife - this.state.HEAL_VALUE) {
@@ -90,24 +106,41 @@ class MonsterFighter extends PureComponent<MonsterFighter> {
     this.endRound(healValue, 'heal');
   }
 
+  _equipItem(item: string) {
+    let array = _.isNil(this.state.itemsEquipped) ? [] : this.state.itemsEquipped
+    array?.push(item)
+    this.setState({ itemsEquipped: array })
+  }
+
   render() {
+    console.log(inventory)
 
     return (
-      <div>
-        <div>Crit: 20%</div>
-        <div id="health-levels">
-          <h2>{`MONSTER HEALTH ${this.state.currentMonsterHealth} / ${this.state.chosenMaxLife}`}</h2>
-          <h2>{`PLAYER HEALTH ${this.state.currentPlayerHealth} / ${this.state.chosenMaxLife}`}</h2>
-        </div>
-        <div id="controls">
-          <button id="attack-btn" onClick={() => this.attackMonster('ATTACK')}>ATTACK</button>
-          <button id="strong-attack-btn" onClick={() => this.attackMonster('STONG ATTACK')}>STRONG ATTACK</button>
-          <button id="heal-btn" onClick={() => this.healPlayerHandler()}>HEAL</button>
-          <button id="log-btn">SHOW LOG</button>
-        </div>
-      </div>
+      <Grid container justifyContent={'space-around'}>
+        <Grid item xs={3}>
+          <Inventory />
+        </Grid>
+        {/* <Grid item xs={1}>
+          <Card >
+            <Typography>{`Health: ${this.state.chosenMaxLife}`}</Typography>
+            <Typography>{`Health: ${this.state.chosenMaxLife}`}</Typography>
+          </Card>
+        </Grid> */}
+        <Grid item xs={8}>
+          <div id="health-levels">
+            <h2>{`MONSTER HEALTH ${this.state.currentMonsterHealth} / ${this.state.chosenMaxLife}`}</h2>
+            <h2>{`PLAYER HEALTH ${this.state.currentPlayerHealth} / ${this.state.chosenMaxLife}`}</h2>
+          </div>
+          <div id="controls">
+            <button onClick={() => this.attackMonster('ATTACK')}>ATTACK</button>
+            <button onClick={() => this.attackMonster('STONG ATTACK')}>STRONG ATTACK</button>
+            <button onClick={() => this.healPlayerHandler()}>HEAL</button>
+            <button>SHOW LOG</button>
+          </div>
+        </Grid>
+      </Grid >
     );
   }
 }
 
-export default MonsterFighter;
+export default connect(mapStateToProps)(MonsterFighter);
