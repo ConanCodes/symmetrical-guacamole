@@ -1,36 +1,92 @@
 export const initialState: RootState = {
-  rootState: undefined,
-  stats: {
-    armor: 0,
-    life: 0,
-    damage: 0,
+  rootState: {
+    logs: {
+      message: [],
+      showLog: true,
+    },
   },
-  baseStats: {
-    armor: 0,
-    life: 100,
-    damage: 15,
+  playerState: {
+    currentPlayerHealth: 100,
+    stats: {
+      armor: 0,
+      life: 0,
+      damage: 0,
+      bonusLife: 0,
+      healAmount: 0,
+    },
+    baseStats: {
+      baseArmor: 0,
+      baseLife: 100,
+      baseDamage: 10,
+      baseBonusLife: 0,
+      baseHealAmount: 30,
+    },
+    items: [
+      { name: "Sharp Sword", slot: "main hand", damage: 10, armor: 0 },
+      { name: "Rusty Mace", slot: "main hand", damage: 8, armor: 0 },
+      { name: "Broken Shield", slot: "off hand", damage: 0, armor: 10 },
+      { name: "Cloth Helmet", slot: "head", damage: 0, armor: 6 },
+      { name: "Cloth Chest", slot: "chest", damage: 0, armor: 6 },
+      { name: "Cloth Leggings", slot: "leg", damage: 0, armor: 4 },
+      { name: "Cloth Gloves", slot: "hand", damage: 0, armor: 2 },
+      { name: "Cloth Boots", slot: "feet", damage: 0, armor: 2 },
+    ],
+    inUseItems: [],
   },
-  items: [
-    { name: "Sharp Sword", slot: "main hand", damage: 10, armor: 0 },
-    { name: "Rusty Mace", slot: "main hand", damage: 8, armor: 0 },
-    { name: "Broken Shield", slot: "off hand", damage: 0, armor: 15 },
-    { name: "Cloth Helmet", slot: "head", damage: 0, armor: 10 },
-    { name: "Cloth Chest", slot: "chest", damage: 0, armor: 10 },
-    { name: "Cloth Leggings", slot: "leg", damage: 0, armor: 8 },
-    { name: "Cloth Gloves", slot: "hand", damage: 0, armor: 2 },
-    { name: "Cloth Boots", slot: "feet", damage: 0, armor: 2 },
-  ],
-  inUseItems: [],
-  updateInventory: undefined,
+  monsterState: {
+    armor: 0,
+    mLife: 200,
+    damage: 25,
+    currentMonsterHealth: 200,
+  },
+  // Functions
+  updateItems: undefined,
+  resetGame: undefined,
+  resetPlayerLife: undefined,
+  damagePlayer: undefined,
+  damageMonster: undefined,
 };
 
 export type RootState = {
-  rootState: any;
-  stats: PlayerStats;
-  baseStats: PlayerStats;
-  items: Item[];
-  updateInventory: any;
-  inUseItems: Item[];
+  rootState: {
+    logs: Logs;
+  };
+  monsterState: MonsterStats;
+  playerState: {
+    currentPlayerHealth: number;
+    stats: PlayerStats;
+    baseStats: PlayerBaseStats;
+    items: Item[];
+    inUseItems: Item[];
+  };
+  updateItems: any;
+  resetGame: any;
+  resetPlayerLife: any;
+  damagePlayer: any;
+  damageMonster: any;
+};
+
+export type PlayerStats = {
+  life: number;
+  damage: number;
+  armor: number;
+  bonusLife: number;
+  healAmount: number;
+};
+
+export type PlayerBaseStats = {
+  baseArmor: number;
+  baseLife: number;
+  baseDamage: number;
+  baseBonusLife: number;
+  baseHealAmount: number;
+};
+
+export type MonsterStats = {
+  mLife: number;
+  damage: number;
+  armor: number;
+  currentMonsterHealth: number;
 };
 
 export type Item = {
@@ -40,29 +96,7 @@ export type Item = {
   armor: number;
 };
 
-export type PlayerStats = {
-  life: number;
-  damage: number;
-  armor: number;
-};
-
-export type MonsterFighterState = {
-  bonusLifeEl: number;
-  ATTACK_VALUE: number;
-  STRONG_ATTACK_VALUE: number;
-  MONSTER_ATTACK_VALUE: number;
-  HEAL_VALUE: number;
-  chosenMaxLife: number;
-  currentMonsterHealth: number;
-  currentPlayerHealth: number;
-  hasBonusLife: boolean;
-  log: string[];
+export type Logs = {
+  message: string[];
   showLog: boolean;
-  itemsEquipped: string[];
 };
-
-type ITEM_NAME = { name: string };
-type ITEM_SLOT = { slot: string };
-type ITEM_DAMAGE = { damage: number };
-type ITEM_ARMOR = { armor: number };
-type ITEM_INUSE = { inUse: boolean };

@@ -8,30 +8,28 @@ import {
 } from "@mui/material";
 import { PureComponent } from "react";
 import { connect } from "react-redux";
-import { updateInventory } from "../store/actions";
+import { updateItems } from "../store/actions";
 import "./App.css";
-import { RootState, Item } from "../store/constants";
+import { RootState } from "../store/constants";
+
 const _ = require("lodash");
 
-const mapStateToProps = (state: any, content: any) => {
+const mapStateToProps = (state: any) => {
   return {
-    rootState: state.reducer.rootState,
-    stats: state.reducer.stats,
-    items: state.reducer.items,
-    inUseItems: state.reducer.inUseItems,
+    playerState: state.reducer.playerState,
+    rootFunctions: state.reducer.rootFunctions,
   };
 };
 
-const mapDispatchToProps = { updateInventory };
+const mapDispatchToProps = { updateItems };
 
 class Inventory extends PureComponent<RootState> {
-  constructor(props: any) {
+  constructor(props: RootState) {
     super(props);
   }
 
   render() {
-    const { items, inUseItems } = this.props;
-
+    const { items, inUseItems } = this.props.playerState;
     return (
       <Grid container justifyContent={"center"}>
         {items.map((item: any, sakuin: number) => {
@@ -54,7 +52,7 @@ class Inventory extends PureComponent<RootState> {
                     border: "1px solid black",
                     borderRadius: "5px",
                   }}
-                  onClick={() => this.props.updateInventory(item)}
+                  onClick={() => this.props.updateItems(item)}
                 >
                   <CardContent>
                     <Typography>Name</Typography>
