@@ -19,7 +19,7 @@ export const initialState: RootState = {
       baseLife: 100,
       baseDamage: 10,
       baseBonusLife: 0,
-      baseHealAmount: 30,
+      baseHealAmount: 25,
     },
     items: [
       { name: "Sharp Sword", slot: "main hand", damage: 10, armor: 0 },
