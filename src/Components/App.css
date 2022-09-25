@@ -106,8 +106,16 @@ button:active {
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.stat-container {
+  text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   background: white;
 }
+
 
 #controls {
   display: flex;

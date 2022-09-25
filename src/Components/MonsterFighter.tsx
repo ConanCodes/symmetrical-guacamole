@@ -1,4 +1,4 @@
-import { Card, Grid, Typography } from "@mui/material";
+import { Card, Container, Grid, Paper, Typography } from "@mui/material";
 import { PureComponent } from "react";
 import { connect } from "react-redux";
 import { RootState } from "../store/constants";
@@ -45,9 +45,7 @@ class MonsterFighter extends PureComponent<RootState> {
 
     // Remove damage blocked by armor
     let dmg =
-      damageToPlayer - (armor + baseArmor) > baseLife
-        ? 0
-        : damageToPlayer - (armor + baseArmor);
+      damageToPlayer - (armor + baseArmor) > baseLife ? 0 : damageToPlayer - (armor + baseArmor);
     this.props.damagePlayer(dmg);
     if (action === "attack") this.props.damageMonster(value + crit);
 
@@ -98,34 +96,32 @@ class MonsterFighter extends PureComponent<RootState> {
       this.props.playerState.stats;
     const { currentMonsterHealth, mLife } = this.props.monsterState;
 
-    console.log();
-
     return (
-      <Grid container justifyContent={"space-around"}>
-        <Grid item xs={3}>
-          {/* @ts-expect-error: I need to figure out how to not require the state but if i use ? it makes errors everywhere */}
-          <Inventory />
+      <Container fixed>
+        {/* @ts-expect-error: I need to figure out how to not require the state but if i use ? it makes errors everywhere */}
+        <Inventory />
+        <Grid container justifyContent={"center"}>
+          <Grid item xs={1} className='stat-container'>
+            <Typography paragraph >{`Health: ${baseLife}`}</Typography>
+            <Typography paragraph>{`Damage: ${damage + baseDamage}`}</Typography>
+            <Typography paragraph>{`Armor: ${baseArmor + armor}`}</Typography>
+          </Grid>
+          <Grid item xs={10} >
+            <div id="health-levels">
+              <h2>{`MONSTER HEALTH ${currentMonsterHealth} / ${mLife}`}</h2>
+              <h2>{`PLAYER HEALTH ${currentPlayerHealth} / ${baseLife}`}</h2>
+            </div>
+            <div id="controls">
+              <button onClick={() => this.attackMonster("ATTACK")}>ATTACK</button>
+              <button onClick={() => this.attackMonster("STONG ATTACK")}>
+                STRONG ATTACK
+              </button>
+              <button onClick={() => this.healPlayerHandler()}>HEAL</button>
+              <button>SHOW LOG</button>
+            </div>
+          </Grid>
         </Grid>
-        <Grid item xs={1}>
-          <Typography>{`Health: ${baseLife}`}</Typography>
-          <Typography>{`Damage: ${damage + baseDamage}`}</Typography>
-          <Typography>{`Armor: ${baseArmor + armor}`}</Typography>
-        </Grid>
-        <Grid item xs={8}>
-          <div id="health-levels">
-            <h2>{`MONSTER HEALTH ${currentMonsterHealth} / ${mLife}`}</h2>
-            <h2>{`PLAYER HEALTH ${currentPlayerHealth} / ${baseLife}`}</h2>
-          </div>
-          <div id="controls">
-            <button onClick={() => this.attackMonster("ATTACK")}>ATTACK</button>
-            <button onClick={() => this.attackMonster("STONG ATTACK")}>
-              STRONG ATTACK
-            </button>
-            <button onClick={() => this.healPlayerHandler()}>HEAL</button>
-            <button>SHOW LOG</button>
-          </div>
-        </Grid>
-      </Grid>
+      </Container>
     );
   }
 }

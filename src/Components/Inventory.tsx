@@ -5,6 +5,7 @@ import {
   CardActionArea,
   CardContent,
   Typography,
+  Paper,
 } from "@mui/material";
 import { PureComponent } from "react";
 import { connect } from "react-redux";
@@ -31,47 +32,37 @@ class Inventory extends PureComponent<RootState> {
   render() {
     const { items, inUseItems } = this.props.playerState;
     return (
-      <Grid container justifyContent={"center"}>
+      <Grid container justifyContent={"center"} >
         {items.map((item: any, sakuin: number) => {
           return (
             <Box
               key={sakuin}
               sx={{
                 display: "inline-block",
-                mx: "2px",
-                transform: "scale(0.8)",
+                // mx: "2px",
+                transform: "scale(.9)",
                 justifyItems: "center",
               }}
             >
-              <CardActionArea>
-                <Card
-                  sx={{
-                    backgroundColor: _.includes(inUseItems, item)
-                      ? "red"
-                      : "lightblue",
-                    border: "1px solid black",
-                    borderRadius: "5px",
-                  }}
-                  onClick={() => this.props.updateItems(item)}
-                >
-                  <CardContent>
-                    <Typography>Name</Typography>
-                    <Typography>{item.name}</Typography>
-                  </CardContent>
-                  <CardContent>
-                    <Typography>Slot</Typography>
-                    <Typography>{item.slot}</Typography>
-                  </CardContent>
-                  <CardContent>
-                    <Typography>Damage</Typography>
-                    <Typography>{item.damage}</Typography>
-                  </CardContent>
-                  <CardContent>
-                    <Typography>Armor</Typography>
-                    <Typography>{item.armor}</Typography>
-                  </CardContent>
-                </Card>
-              </CardActionArea>
+              <Paper
+                className='stat-container'
+                // elevation={2}
+                sx={{
+                  backgroundColor: _.includes(inUseItems, item) ? "red" : "lightgrey",
+                  // textAlign: 'center',
+                  // padding: '10px',
+                }}
+                onClick={() => this.props.updateItems(item)}
+              >
+                <Typography variant="overline" fontSize={'large'} fontWeight={'800'} gutterBottom>Name</Typography>
+                <Typography>{item.name}</Typography>
+                <Typography variant="overline" fontSize={'large'} fontWeight={'800'} gutterBottom>Slot</Typography>
+                <Typography>{item.slot}</Typography>
+                <Typography variant="overline" fontSize={'large'} fontWeight={'800'} gutterBottom>Damage</Typography>
+                <Typography>{item.damage}</Typography>
+                <Typography variant="overline" fontSize={'large'} fontWeight={'800'} gutterBottom>Armor</Typography>
+                <Typography>{item.armor}</Typography>
+              </Paper>
             </Box>
           );
         })}
