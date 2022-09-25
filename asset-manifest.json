@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/symmetrical-guacamole/static/css/main.25d4ebc1.css",
+    "main.js": "/symmetrical-guacamole/static/js/main.5d8b8f25.js",
+    "index.html": "/symmetrical-guacamole/index.html",
+    "main.25d4ebc1.css.map": "/symmetrical-guacamole/static/css/main.25d4ebc1.css.map",
+    "main.5d8b8f25.js.map": "/symmetrical-guacamole/static/js/main.5d8b8f25.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25d4ebc1.css",
+    "static/js/main.5d8b8f25.js"
+  ]
+}
