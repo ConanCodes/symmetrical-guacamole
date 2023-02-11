@@ -1,5 +1,5 @@
 
-## Key Notes for Alex:
+## Key Notes for New Guy:
 
 # Connect to git
 To build out this repo in your VSC here are the steps to get you started;
